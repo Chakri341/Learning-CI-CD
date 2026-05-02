@@ -1,4 +1,10 @@
-http.get("http://localhost:3001", (res) => {
+const http = require("http");
+const app = require("./server");
+
+const server = http.createServer(app);
+
+server.listen(3001, () => {
+  http.get("http://localhost:3001", (res) => {
   let data = "";
 
   res.on("data", (chunk) => {
@@ -17,4 +23,5 @@ http.get("http://localhost:3001", (res) => {
     console.log("Test passed ✅");
     server.close();
   });
+});
 });
