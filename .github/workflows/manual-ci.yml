@@ -9,7 +9,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 1-basics/p1-manual-ci   # 👈 VERY IMPORTANT
+        working-directory: 1-basics/p1-manual-ci   
 
     steps:
       - name: Step 1 - Checkout Code
