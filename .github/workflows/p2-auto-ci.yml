@@ -10,22 +10,19 @@ jobs:
 
     defaults:
       run:
-        working-directory: 1-basics/p2-auto-ci   
+        working-directory: 1-basics/p2-auto-ci
 
     steps:
-      - name: Step 1 - Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Step 2 - Setup Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Step 3 - Install Dependencies
-        run: npm ci
+      - name: Run App
+        run: node index.js
 
-      - name: Step 4 - Run App
-        run: npm start
-
-      - name: Step 5 - Done
+      - name: Done
         run: echo "Auto CI Completed ✅"
